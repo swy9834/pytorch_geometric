@@ -92,7 +92,7 @@ class GAT(torch.nn.Module):
 
                 if i != self.num_layers - 1:
                     x = F.elu(x)
-                xs.append(x.cpu())
+                xs.append(x.cpu()[:batch_size])
 
                 pbar.update(batch_size)
 
